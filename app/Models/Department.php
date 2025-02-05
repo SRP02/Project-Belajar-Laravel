@@ -9,15 +9,25 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Department extends Model
 {
     use HasFactory;
-    
-    public function grades():HasMany
+
+    // Field yang dapat diisi secara mass assignment
+    protected $fillable = [
+        'name', 'desc'// Nama departemen
+    ];
+
+    /**
+     * Relasi ke Grades
+     */
+    public function grades(): HasMany
     {
-        return $this -> hasMany(Grade::class);
+        return $this->hasMany(Grade::class);
     }
 
-    public function students():HasMany
+    /**
+     * Relasi ke Students
+     */
+    public function students(): HasMany
     {
         return $this->hasMany(Student::class);
     }
-    
 }

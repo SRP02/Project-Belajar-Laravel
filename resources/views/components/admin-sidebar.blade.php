@@ -48,10 +48,10 @@
       </li>
       <li>
         <x-admin-sidelink
-          href="/dashboard/deparment" 
+          href="/dashboard/department" 
           icon="https://cdn-icons-png.flaticon.com/512/3166/3166006.png"
           alt="Department Icon" 
-          :active="request()->is('dashboard/deparment')"
+          :active="request()->is('dashboard/department')"
           >
             Department
         </x-admin-sidelink>

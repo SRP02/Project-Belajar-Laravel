@@ -11,12 +11,24 @@ class Grade extends Model
 {
     use HasFactory;
 
-    public function students():HasMany
+    // Field yang dapat diisi secara mass assignment
+    protected $fillable = [
+        'name',          // Nama grade
+        'department_id', // ID departemen
+    ];
+
+    /**
+     * Relasi ke Students
+     */
+    public function students(): HasMany
     {
-        return $this -> hasMany(Student::class);
+        return $this->hasMany(Student::class);
     }
 
-    public function department():BelongsTo
+    /**
+     * Relasi ke Department
+     */
+    public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
     }
